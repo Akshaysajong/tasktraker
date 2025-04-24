@@ -1,0 +1,39 @@
+{% extends "./index.html" %}
+{% block main %}
+
+
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Update User</h4>
+              <form class="forms-sample" method="post">{% csrf_token %}
+                
+                <div class="form-group">
+                  {{ form.username.label_tag }} {{ form.username }}
+              </div>
+              <div class="form-group">
+                  {{ form.email.label_tag }} {{ form.email }}
+              </div>
+              <div class="form-group">
+                  {{ form.user_type.label_tag }} {{ form.user_type }}
+              </div>
+              <div class="form-group">
+                  {{ form.assigned_admin.label_tag }} {{ form.assigned_admin }}
+              </div>
+              <button type="submit" class="btn btn-primary">Update</button>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+   
+
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

@@ -1,0 +1,40 @@
+{% extends "./index.html" %}
+{% block main %}
+
+
+<div class="main-panel">        
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-6 grid-margin stretch-card mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Edit Task</h4>
+              {% if messages %}
+                  <div class="messages">
+                      {% for message in messages %}
+                          <div class="{{ message.tags }}"> 
+                              {{ message }}
+                          </div>
+                      {% endfor %}
+                  </div>
+              {% endif %}
+              
+              <form class="forms-sample" method="post">{% csrf_token %}
+                
+                {{ form.as_p }}
+                
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                
+              </form>
+             
+            </div>
+          </div>
+        </div>
+   
+
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

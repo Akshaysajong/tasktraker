@@ -1,0 +1,44 @@
+{% extends "./index.html" %}
+
+{% block main %}
+
+<div class="main-panel">
+  <div class="content-wrapper">
+      <div class="row">
+        <div class="col-md-12 grid-margin">
+          <div class="row">
+            <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+              <h3 class="font-weight-bold">Dashboard</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 grid-margin transparent">
+          <div class="row">
+            
+            <div class="col-md-6 mb-4 stretch-card transparent">
+              <a href="/adduser/" style="text-decoration : none;">
+              <div class="card card-dark-blue">
+                <div class="card-body">
+                  <p class="fs-30 mb-2">Add User</p>
+                </div>
+              </div>
+            </a>
+            </div>
+
+            <div class="col-md-6 mb-4 stretch-card transparent">
+              <a href="/task_create/" style="text-decoration : none;">
+              <div class="card card-dark-blue">
+                <div class="card-body"> 
+                  <p class="fs-30 mb-2">Add Tasks</p>
+                </div>
+              </div>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

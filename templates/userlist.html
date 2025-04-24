@@ -1,0 +1,38 @@
+{% extends "./index.html" %}
+{% block main %}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">User LIst</h4>
+        
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for x in user %}
+                <tr>
+                    <td>{{x.username}}</td>
+                    <td>{{x.userprofile.user_type}}</td>
+                    <td>
+                        <a href="/updateuser/?a={{x.id}}"><button class="btn-link text-decoration-none bg-transparent border-0 shadow-none text-body" id=""><i class="bi bi-pencil"></i> <small>Edit</small></button></a>
+                        <a href="/removeuser/?a={{x.id}}"><button class="btn-link text-decoration-none bg-transparent border-0 shadow-none text-body" id=""><i class="bi bi-trash"></i> <small>Remove</small></button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}
