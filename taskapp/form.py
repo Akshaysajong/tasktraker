@@ -113,13 +113,11 @@ class UserUpdateForm(forms.ModelForm):
         print(f"Cleaning username: {username}")
 
         if username:
-            # Only check for uniqueness if the username is actually being changed
             if username != self.user_instance.username:
-                print(f"Checking if username {username} already exists (excluding current user).")
                 qs = User.objects.filter(username=username)
-                print(f"Queryset: {qs}")  # Debugging the queryset
+
                 if self.user_instance and self.user_instance.id:
-                    qs = qs.exclude(id=self.user_instance.id)  # Exclude the current user's id
+                    qs = qs.exclude(id=self.user_instance.id)
 
                 if qs.exists():
                     print(f"Error: User with username {username} already exists.")
